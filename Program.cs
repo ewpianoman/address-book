@@ -37,7 +37,7 @@ namespace address_book
                 }
                 else
                 {
-                    Console.WriteLine($"\"{input}\" command not found!");
+                    Console.WriteLine($"I\'m sorry! The \"{input}\" command was not found.");
                     Console.WriteLine("Here is a list of all available commands:");
                     repl.PrintCommands();
                 }    
