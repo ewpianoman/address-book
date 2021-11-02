@@ -23,7 +23,11 @@ namespace address_book
                 new Entry("Lori", "Abel", "(618) 262-1710", "xraytech72@icloud.com"),
                 new Entry("Eric", "Wilson", "(812) 486-8718", "ewpiano@gmail.com")
             };
+
+            REPL repl = new REPL(commands);
+            Rolodex rolodex = new Rolodex(entries);
             
+            // Might add this to a class. AddressBook or REPL?
             Console.WriteLine("\nWelcome to your Personal Address Book!");
             Thread.Sleep(500);
             Console.WriteLine("......................................");
@@ -31,8 +35,6 @@ namespace address_book
             Console.WriteLine("You can search for a contact in your address book by typing a search term and pressing \"enter\"");
             Console.WriteLine("To exit this application, type \"exit\"");
             Console.WriteLine("To list all available commands, type \"commands\"\n");
-
-            REPL repl = new REPL(commands);
 
             bool isRunning = true;
 
@@ -56,6 +58,7 @@ namespace address_book
                 else if (input == "list")
                 {
                     Console.WriteLine("\nHere is a list of all the entries in your Address Book:\n");
+                    rolodex.PrintEntries();
                     
                 }
                 else
