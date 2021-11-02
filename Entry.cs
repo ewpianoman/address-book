@@ -28,5 +28,13 @@ namespace AddressBook
             Address = address;
             Email = email;
         }
+
+        public Entry(string firstName, string lastName, string phone, string email)
+        {
+            FirstName = firstName;
+            LastName = lastName;
+            Phone = phone;
+            Email = email;
+        }
     }
 }

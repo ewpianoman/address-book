@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Threading;
 using AddressBook;
 
 namespace address_book
@@ -10,13 +11,24 @@ namespace address_book
             Command[] commands =
             {
                 new Command("exit", "End Program"),
-                new Command("commands", "List all commands")
+                new Command("commands", "List all commands"),
+                new Command("list", "List all contact entries")
             };
-
-            Console.WriteLine("Welcome to your Personal Address Book");
+            
+            // Test Entries
+            Entry[] entries = 
+            {
+                new Entry("Emily", "Kathryn", "Wilson", "(812) 610-5803", "218 E 2nd St, Mt. Carmel, IL 62863", "emilykwilson17@gmail.com"),
+                new Entry("Lisa", "Reynolds", "(812) 385-2591 (13139)", "1101 N Main St, Princeton, IN 47670", "lreynolds@ngsc.k12.in.us")
+            };
+            
+            Console.WriteLine("\nWelcome to your Personal Address Book!");
+            Thread.Sleep(500);
+            Console.WriteLine("......................................");
+            Thread.Sleep(1000);
             Console.WriteLine("You can search for a contact in your address book by typing a search term and pressing \"enter\"");
             Console.WriteLine("To exit this application, type \"exit\"");
-            Console.WriteLine("To list all available commands, type \"commands\"");
+            Console.WriteLine("To list all available commands, type \"commands\"\n");
 
             REPL repl = new REPL(commands);
 
@@ -28,18 +40,28 @@ namespace address_book
 
                 if (input == "exit")
                 {
-                    Console.WriteLine("Goodbye!");
+                    Console.WriteLine("\nGoodbye...");
+                    Thread.Sleep(500);
+                    Console.WriteLine("\n");
                     isRunning = false;
                 } 
                 else if (input == "commands")
                 {
+                    Console.WriteLine("\n");
                     repl.PrintCommands();
+                    Console.WriteLine("\n");
+                }
+                else if (input == "list")
+                {
+                    Console.WriteLine("\nHere is a list of all the entries in your Address Book:\n");
                 }
                 else
                 {
-                    Console.WriteLine($"I\'m sorry! The \"{input}\" command was not found.");
+                    Console.WriteLine($"\nI\'m sorry! The \"{input}\" command was not found.\n");
+                    Thread.Sleep(500);
                     Console.WriteLine("Here is a list of all available commands:");
                     repl.PrintCommands();
+                    Console.WriteLine("\n");
                 }    
             }
         }
