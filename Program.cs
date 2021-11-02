@@ -18,8 +18,10 @@ namespace address_book
             // Test Entries
             Entry[] entries = 
             {
-                new Entry("Emily", "Kathryn", "Wilson", "(812) 610-5803", "218 E 2nd St, Mt. Carmel, IL 62863", "emilykwilson17@gmail.com"),
-                new Entry("Lisa", "Reynolds", "(812) 385-2591 (13139)", "1101 N Main St, Princeton, IN 47670", "lreynolds@ngsc.k12.in.us")
+                new Entry("Emily", "Wilson", "(812) 610-5803"),
+                new Entry("Lisa", "Reynolds", "(812) 385-2591 (13139)"),
+                new Entry("Lori", "Abel", "(618) 262-1710"),
+                new Entry("Eric", "Wilson", "(812) 486-8718")
             };
             
             Console.WriteLine("\nWelcome to your Personal Address Book!");
