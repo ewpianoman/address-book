@@ -1,11 +1,12 @@
 using System;
+using System.Collections.Generic;
 
 namespace AddressBook
 {
     class Rolodex
     {
-        private Entry[] _entries;
-        public Rolodex(Entry[] entries)
+        private List<Entry> _entries;
+        public Rolodex(List<Entry> entries)
         {
             _entries = entries;
         }

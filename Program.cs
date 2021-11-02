@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Threading;
+using System.Collections.Generic;
 using AddressBook;
 
 namespace address_book
@@ -16,7 +17,7 @@ namespace address_book
             };
             
             // Test Entries
-            Entry[] entries = 
+            List<Entry> entries = new List<Entry>()
             {
                 new Entry("Emily", "Wilson", "(812) 610-5803", "emilykwilson17@gmail.com"),
                 new Entry("Lisa", "Reynolds", "(812) 385-2591 (13139)", "lreynolds@ngsc.k12.in.us"),
